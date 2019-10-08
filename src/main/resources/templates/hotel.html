@@ -1,0 +1,16 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+<h1>Hotel</h1>
+Name: <span th:text="${name}">name</span>
+<br/>
+
+<table>
+    <tr th:each="image :${images}">
+        <img alt="sample" th:src="*{'data:image/png;base64,'+ image}" width="200"/>
+    </tr>
+</table>
+
+<br/> <br/>
+<a href="/">Back to home page</a>
+</body>
+</html>

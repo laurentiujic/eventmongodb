@@ -1,0 +1,30 @@
+
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<body>
+
+<h1>Create a new Hotel</h1>
+
+<form method="POST" action="/hotels/add" enctype="multipart/form-data">
+    Hotel name: <input type="text" name="name" />
+    <br/>
+    Price per night: <input type="number" name="pricePerNight">
+    <br/>
+    Address :
+    <br/>
+    City : <input type="text" name="city">
+    Country : <input type="text" name="country">
+    <br/>
+    Image title: <input type="text" name="imageTitle">
+    <br/>
+    Image:<input type="file" name="image" accept="image/*" />
+    <br/>
+
+    <br/>
+    <input type="submit" value="Upload" />
+</form>
+
+</body>
+
+</html>
