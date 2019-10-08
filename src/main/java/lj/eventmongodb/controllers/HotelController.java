@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.List;
 
 @Controller
@@ -39,6 +38,13 @@ public class HotelController {
 
         return hotels;
     }
+
+    @RequestMapping({"", "/", "index", "index.html"})
+    public String index(Model model) {
+        List<Hotel> hotels = this.hotelRepository.findAll();
+        String id = hotels.get(0).getId();
+        model.addAttribute("images", hotelService.getPhotosEncodedString(id));
+        return "index";}
 
     @PutMapping
     public void insert(@RequestBody Hotel hotel){

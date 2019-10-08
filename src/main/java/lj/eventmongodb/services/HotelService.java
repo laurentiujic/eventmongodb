@@ -32,7 +32,7 @@ public class HotelService {
 
     public List<String> getPhotosEncodedString(String id) {
         Hotel hotel = getHotel(id);
-        List<String> imageStringObject = new LinkedList<>();
+        List<String> imageStringObject = new ArrayList<>();
         for (Photo image : hotel.getPhotos()){
             imageStringObject.add(Base64.getEncoder().encodeToString(image.getImage().getData()));
         }
