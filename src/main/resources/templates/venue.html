@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}" />
+</head>
+
+<body>
+
+<div class="container w-50">
+    <table class="table">
+        <tr>
+            <td>
+                <h4>Venue</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Venue name: <span th:text="${name}">name</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Venue description: <span th:text="${venueDescription}">Venue description</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address: <span th:text="${address}">Venue address</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City: <span th:text="${city}">Venue city</span>
+                Country: <span th:text="${country}">Venue country</span>
+            </td>
+        </tr>
+        <tr>
+            <td th:each="image :${images}">
+                <img alt="sample" th:src="*{'data:image/png;base64,'+ image}" width="200"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="/venues/createVenue">Back to venue insert page</a>
+                <a href="/venues/">Back to home page</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

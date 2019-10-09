@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../static/bootstrap.css" th:href="@{/bootstrap.css}" />
+    <title>Create a new Venue</title>
+</head>
+
+<body>
+
+<div class="container w-50">
+    <h4>Create a new Venue</h4>
+    <form method="POST" action="/venues/add" enctype="multipart/form-data">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="venueName">Venue name:</label>
+                <input type="text" class="form-control" id="venueName" name="name"
+                       placeholder="Enter venue name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="venueDescription">Description</label>
+                <textarea class="form-control" id="venueDescription"  name="venueDescription" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="venueAddress">Address:</label>
+                <input type="text" class="form-control" id="venueAddress" name="address"
+                       placeholder="Marienplatz 11">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="venueAddressCity">City</label>
+                <input type="text" class="form-control" id="venueAddressCity" name="city">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="venueAddressCountry">Country</label>
+                <input type="text" class="form-control" id="venueAddressCountry" name="country">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="imageName">Image title</label>
+                <input type="text" class="form-control" id="imageName" name="imageTitle">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="imageFile">Photo file input</label>
+                <input type="file" class="form-control-file" id="imageFile" name="image" accept="image/*">
+            </div>
+        </div>
+        <div class="form-row">
+            <input type="submit" class="btn btn-primary mb-2" value="Submit"/>
+        </div>
+    </form>
+
+</div>
+
+</body>
+
+</html>

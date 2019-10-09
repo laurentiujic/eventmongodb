@@ -12,6 +12,7 @@ public class Photo {
     private String id;
     private String title;
     private Binary image;
+    private String imageString;
 
     public Photo(String title) {
         super();
@@ -40,6 +41,14 @@ public class Photo {
 
     public void setImage(Binary image) {
         this.image = image;
+    }
+
+    public String getImageString() {
+        return imageString;
+    }
+
+    public void setImageString(String imageString) {
+        this.imageString = imageString;
     }
 
     @Override

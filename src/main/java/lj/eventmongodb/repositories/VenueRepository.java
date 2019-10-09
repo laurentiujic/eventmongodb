@@ -1,6 +1,6 @@
 package lj.eventmongodb.repositories;
 
-import lj.eventmongodb.model.Hotel;
+import lj.eventmongodb.model.Venue;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface HotelRepository extends MongoRepository<Hotel, String> {
+public interface VenueRepository extends MongoRepository<Venue, String> {
 
-    List<Hotel> findByPricePerNightLessThan(int maxPrice);
+    /*List<Venue> findByPricePerNightLessThan(int maxPrice);
 
     @Query(value = "{'address.city':?0}")
-    List<Hotel> findByCity(String city);
-
+    List<Venue> findByCity(String city);
+*/
 
 
 }

@@ -1,31 +1,24 @@
 package lj.eventmongodb.bootstrap;
 
-import lj.eventmongodb.model.Address;
-import lj.eventmongodb.model.Photo;
-import lj.eventmongodb.repositories.HotelRepository;
-import lj.eventmongodb.model.Hotel;
-import lj.eventmongodb.model.Review;
+import lj.eventmongodb.repositories.VenueRepository;
 import lj.eventmongodb.repositories.PhotoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
 
-@Component
 public class DbSeeder implements CommandLineRunner {
-    private HotelRepository hotelRepository;
+    private VenueRepository venueRepository;
     private PhotoRepository photoRepository;
 
-    public DbSeeder(HotelRepository hotelRepository) {
-        this.hotelRepository = hotelRepository;
+    public DbSeeder(VenueRepository venueRepository) {
+        this.venueRepository = venueRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
 
-/*        Hotel marriot = new Hotel(
+/*        Venue marriot = new Venue(
                 "Marriot",
                 130,
                 new Address("Paris", "France"),
@@ -39,7 +32,7 @@ public class DbSeeder implements CommandLineRunner {
                 )
         );
 
-        Hotel ibis = new Hotel(
+        Venue ibis = new Venue(
                 "Ibis",
                 90,
                 new Address("Bucharest", "Romania"),
@@ -52,7 +45,7 @@ public class DbSeeder implements CommandLineRunner {
                         new Photo("earth")
                 )
         );
-        Hotel sofitel = new Hotel(
+        Venue sofitel = new Venue(
                 "Sofitel",
                 200,
                 new Address("Rome", "Italy"),
@@ -68,7 +61,7 @@ public class DbSeeder implements CommandLineRunner {
 
 
         //add our hotels to the database
-        /*List<Hotel> hotels = Arrays.asList(marriot,ibis,sofitel);
+        /*List<Venue> hotels = Arrays.asList(marriot,ibis,sofitel);
         this.hotelRepository.saveAll(hotels);*/
 
 
