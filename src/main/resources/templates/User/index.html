@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../../static/bootstrap.css" th:href="@{/bootstrap.css}" />
+    <title>Munich Events</title>
+</head>
+
+<body>
+<nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light mb-3">
+    <div class="container">
+        <div class="flex-column mr-auto">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <!--display different colum size for different screen sizes-->
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4" th:each="venue : ${venues}">
+            <div class="card" >
+                <img class="card-img-top img-fluid"
+                     th:src="@{'data:image/png;base64,'+ ${venue.photos[0].imageString}}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title" th:text="${venue.name}">Venue name</h4>
+                    <p class="card-text" th:text="${venue.description}">Venue description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
